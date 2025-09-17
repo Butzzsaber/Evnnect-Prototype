@@ -23,6 +23,9 @@ const UserAuthPage: React.FC<UserAuthPageProps> = ({ setCurrentUser, setCurrentP
   const [authMode, setAuthMode] = useState<"login" | "signup">("login");
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+   const [Evmodel, setEvmodel] = useState('');
+   const [ChargingType, setChargingType] = useState('');
  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -47,8 +50,32 @@ const UserAuthPage: React.FC<UserAuthPageProps> = ({ setCurrentUser, setCurrentP
       console.error('Error fetching data:', error);
     }
   };
-   
-    
+  const handleSignup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try{
+        
+        const newUser = {
+          
+          name: name,
+          email: email,
+          password: password,
+          evModel: Evmodel,
+    ChargingType : ChargingType,
+    type: "user" as "user",
+        };
+  await axios.post('http://localhost:5000/signup', newUser);
+  const res = await axios.get('http://localhost:5000/data');
+      const users = res.data;
+      const user = users.find(
+        (u: { email: string; password: string }) => u.email === email && u.password === password
+      );
+  setCurrentUser(user);
+  setCurrentPage("user-dashboard");
+      }
+    catch(error){
+      console.error('Error signing up:', error);
+    }
+  }
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
@@ -64,18 +91,21 @@ const UserAuthPage: React.FC<UserAuthPageProps> = ({ setCurrentUser, setCurrentP
 
         <form
           className="space-y-6"
-          onSubmit={handleLogin}
+          onSubmit = {authMode === "login" ? handleLogin : handleSignup}
         >
           {authMode === "signup" && (
             <>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Full Name
                 </label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
                   required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
 
@@ -87,6 +117,8 @@ const UserAuthPage: React.FC<UserAuthPageProps> = ({ setCurrentUser, setCurrentP
                   type="text"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
                   placeholder="e.g., Tesla Model 3, Nissan Leaf"
+                  value={Evmodel}
+                  onChange={(e) => setEvmodel(e.target.value)}
                 />
               </div>
 
@@ -94,7 +126,8 @@ const UserAuthPage: React.FC<UserAuthPageProps> = ({ setCurrentUser, setCurrentP
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Charging Port Type
                 </label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                onClick={(e) => setChargingType(e.currentTarget.value)}>
                   <option>Tesla</option>
                   <option>CCS</option>
                   <option>CHAdeMO</option>
