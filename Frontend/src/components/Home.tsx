@@ -2,7 +2,15 @@ import React from "react";
 import { Zap, MapPin, Users, Shield } from "lucide-react";
 
 interface HomeProps {
-  setPage: (page: "home" | "host-auth" | "user-auth" | "host-dashboard" | "user-dashboard" | "map") => void;
+  setPage: (
+    page:
+      | "home"
+      | "host-auth"
+      | "user-auth"
+      | "host-dashboard"
+      | "user-dashboard"
+      | "map"
+  ) => void;
 }
 
 const Home: React.FC<HomeProps> = ({ setPage }) => {
@@ -20,13 +28,22 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
             </div>
 
             <nav className="hidden md:flex space-x-8">
-              <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <a
+                href="#features"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
                 Features
               </a>
-              <a href="#how-it-works" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <a
+                href="#how-it-works"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
                 How it Works
               </a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <a
+                href="#about"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
                 About
               </a>
             </nav>
@@ -59,8 +76,9 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Evnnect brings together EV drivers and charging station hosts. Share charging infrastructure, earn money as a
-            host, or discover convenient charging spots as a driver.
+            Evnnect brings together EV drivers and charging station hosts. Share
+            charging infrastructure, earn money as a host, or discover
+            convenient charging spots as a driver.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -84,8 +102,12 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
       <section id="features" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Evnnect?</h3>
-            <p className="text-lg text-gray-600">Everything you need for seamless EV charging</p>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Why Choose Evnnect?
+            </h3>
+            <p className="text-lg text-gray-600">
+              Everything you need for seamless EV charging
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -93,55 +115,104 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">GPS Navigation</h4>
-              <p className="text-gray-600">Real-time GPS directions to the nearest available charging station</p>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                GPS Navigation
+              </h4>
+              <p className="text-gray-600">
+                Real-time GPS directions to the nearest available charging
+                station
+              </p>
             </div>
 
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 hover:shadow-lg transition-all">
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">Community Driven</h4>
-              <p className="text-gray-600">Connect with local hosts and contribute to sustainable transportation</p>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                Community Driven
+              </h4>
+              <p className="text-gray-600">
+                Connect with local hosts and contribute to sustainable
+                transportation
+              </p>
             </div>
 
             <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 hover:shadow-lg transition-all">
               <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">Secure & Reliable</h4>
-              <p className="text-gray-600">Verified hosts, secure payments, and 24/7 customer support</p>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                Secure & Reliable
+              </h4>
+              <p className="text-gray-600">
+                Verified hosts, secure payments, and 24/7 customer support
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* How it Works */}
-      <section id="how-it-works" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section
+        id="how-it-works"
+        className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h3>
-            <p className="text-lg text-gray-600">Simple steps to start charging or hosting</p>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              How It Works
+            </h3>
+            <p className="text-lg text-gray-600">
+              Simple steps to start charging or hosting
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* For Drivers */}
             <div className="space-y-6">
-              <h4 className="text-2xl font-bold text-gray-900 text-center">For EV Drivers</h4>
+              <h4 className="text-2xl font-bold text-gray-900 text-center">
+                For EV Drivers
+              </h4>
               <div className="space-y-4">
-                <Step number={1} title="Find Stations" description="Browse available charging stations near you" />
-                <Step number={2} title="Book & Navigate" description="Reserve your spot and get GPS directions" />
-                <Step number={3} title="Charge & Pay" description="Connect your vehicle and pay securely" />
+                <Step
+                  number={1}
+                  title="Find Stations"
+                  description="Browse available charging stations near you"
+                />
+                <Step
+                  number={2}
+                  title="Book & Navigate"
+                  description="Reserve your spot and get GPS directions"
+                />
+                <Step
+                  number={3}
+                  title="Charge & Pay"
+                  description="Connect your vehicle and pay securely"
+                />
               </div>
             </div>
 
             {/* For Hosts */}
             <div className="space-y-6">
-              <h4 className="text-2xl font-bold text-gray-900 text-center">For Charging Hosts</h4>
+              <h4 className="text-2xl font-bold text-gray-900 text-center">
+                For Charging Hosts
+              </h4>
               <div className="space-y-4">
-                <Step number={1} title="List Your Charger" description="Add your charging station details and pricing" />
-                <Step number={2} title="Accept Bookings" description="Manage availability and confirm reservations" />
-                <Step number={3} title="Earn Money" description="Get paid automatically after each session" />
+                <Step
+                  number={1}
+                  title="List Your Charger"
+                  description="Add your charging station details and pricing"
+                />
+                <Step
+                  number={2}
+                  title="Accept Bookings"
+                  description="Manage availability and confirm reservations"
+                />
+                <Step
+                  number={3}
+                  title="Earn Money"
+                  description="Get paid automatically after each session"
+                />
               </div>
             </div>
           </div>
@@ -149,7 +220,7 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12" id="about">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -158,7 +229,17 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
               </div>
               <span className="font-bold">Evnnect</span>
             </div>
-            <p className="text-gray-400">© 2025 Evnnect. All rights reserved.</p>
+            <br></br>
+            <span className="text-gray-400 pl-14 pr-14">
+              We connect EV drivers with reliable charging stations, making
+              charging easy, accessible, and sustainable. Our platform bridges
+              the gap between drivers and networks, ensuring smooth journeys and
+              supporting the shift toward a greener future.
+            </span>
+
+            <p className="text-gray-400">
+              © 2025 Evnnect. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

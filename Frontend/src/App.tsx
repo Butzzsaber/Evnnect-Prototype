@@ -31,11 +31,17 @@ const App: React.FC = () => {
       {page === "home" && <Home setPage={setPage} />}
 
       {page === "host-auth" && (
-        <HostAuthPage setCurrentUser={setCurrentUser} setCurrentPage={setPage} />
+        <HostAuthPage
+          setCurrentUser={setCurrentUser}
+          setCurrentPage={setPage}
+        />
       )}
 
       {page === "user-auth" && (
-        <UserAuthPage setCurrentUser={setCurrentUser} setCurrentPage={setPage} />
+        <UserAuthPage
+          setCurrentUser={setCurrentUser}
+          setCurrentPage={setPage}
+        />
       )}
 
       {page === "host-dashboard" && (
