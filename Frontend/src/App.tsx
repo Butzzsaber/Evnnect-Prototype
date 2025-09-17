@@ -5,7 +5,7 @@ import UserAuthPage from "./components/UserAuth";
 import HostDashboard from "./components/HostDashboard";
 import UserDashboard from "./components/UserDashboard";
 import MapView from "./components/MapView";
-import axios from "axios";
+//import axios from "axios";
 type Page =
   | "home"
   | "host-auth"
