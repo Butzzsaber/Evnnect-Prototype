@@ -1,5 +1,6 @@
 // src/components/UserDashboard.tsx
 import { Battery, MapPin, Star } from "lucide-react";
+//import Host1 from "./public/Host1.jpg";
 
 type Station = {
   id: number;
@@ -34,49 +35,49 @@ const mockStations: Station[] = [
     id: 1,
     name: "Host1",
     location: "Biswa Bangla Convention Centre, New Town, Rajarhat",
-    coords: { lat: 22.5792, lng: 88.4790 },
+    coords: { lat: 22.5792, lng: 88.479 },
     power: "60kW",
     connectorType: ["Tesla", "CCS"],
     price: 16,
     available: true,
     rating: 4.7,
-    image: "https://source.unsplash.com/400x300/?tesla,charger",
+    image: "Host1.jpg",
   },
   {
     id: 2,
     name: "Host2",
     location: "Salt Lake, Sector V, Kolkata",
-    coords: { lat: 22.5813, lng: 88.4080 },
+    coords: { lat: 22.5813, lng: 88.408 },
     power: "50kW",
     connectorType: ["CCS", "CHAdeMO"],
     price: 18,
     available: true,
     rating: 4.3,
-    image: "https://source.unsplash.com/400x300/?electric,car",
+    image: "Host2.jpg",
   },
-   {
+  {
     id: 3,
     name: "Host3",
     location: "Axis Mall, New Town",
-    coords: { lat: 22.5813, lng: 88.4080 },
+    coords: { lat: 22.5813, lng: 88.408 },
     power: "50kW",
     connectorType: ["CCS", "CHAdeMO"],
     price: 20,
     available: true,
     rating: 4.3,
-    image: "https://source.unsplash.com/400x300/?electric,car",
+    image: "Host3.avif",
   },
   {
     id: 4,
     name: "Host4",
     location: "Beleghata Main Road, Kolkata",
-    coords: { lat: 22.5813, lng: 88.4080 },
+    coords: { lat: 22.5813, lng: 88.408 },
     power: "50kW",
     connectorType: ["CCS", "CHAdeMO"],
     price: 18,
     available: true,
     rating: 4.3,
-    image: "https://source.unsplash.com/400x300/?electric,car",
+    image: "Host4.webp",
   },
 ];
 
@@ -159,7 +160,9 @@ export const UserDashboard = ({
                 <h3 className="font-semibold text-gray-900">{station.name}</h3>
                 <div className="flex items-center space-x-1">
                   <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                  <span className="text-sm text-gray-600">{station.rating}</span>
+                  <span className="text-sm text-gray-600">
+                    {station.rating}
+                  </span>
                 </div>
               </div>
 

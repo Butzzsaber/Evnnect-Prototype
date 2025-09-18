@@ -2,7 +2,12 @@ import React from "react";
 import { Zap, Battery, Users, Star, Clock } from "lucide-react";
 
 interface HostDashboardProps {
-  currentUser: { id: string; name: string; email: string; type: "host" | "user" } | null;
+  currentUser: {
+    id: string;
+    name: string;
+    email: string;
+    type: "host" | "user";
+  } | null;
   setCurrentUser: (user: any) => void;
   setCurrentPage: (page: "home" | "host-dashboard" | "user-dashboard") => void;
 }
@@ -25,7 +30,9 @@ const HostDashboard: React.FC<HostDashboardProps> = ({
               <h1 className="text-xl font-bold text-gray-900">Evnnect Host</h1>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-gray-700">Welcome, {currentUser?.name}</span>
+              <span className="text-gray-700">
+                Welcome, {currentUser?.name}
+              </span>
               <button
                 onClick={() => {
                   setCurrentUser(null);
@@ -85,7 +92,9 @@ const HostDashboard: React.FC<HostDashboardProps> = ({
         {/* Stations */}
         <div className="bg-white rounded-xl shadow-sm p-6">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-bold text-gray-900">My Charging Stations</h2>
+            <h2 className="text-xl font-bold text-gray-900">
+              My Charging Stations
+            </h2>
             <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
               Add New Station
             </button>
@@ -95,17 +104,22 @@ const HostDashboard: React.FC<HostDashboardProps> = ({
             {/* Station 1 */}
             <div className="border border-gray-200 rounded-lg p-4">
               <div className="flex justify-between items-start mb-3">
-                <h3 className="font-semibold text-gray-900">Home Fast Charger</h3>
+                <h3 className="font-semibold text-gray-900">
+                  Home Fast Charger
+                </h3>
                 <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
                   Available
                 </span>
               </div>
               <p className="text-sm text-gray-600 mb-2">50kW CCS • $8/hour</p>
-              <p className="text-sm text-gray-600 mb-3">Beleghata Main Road, Kolkata</p>
+              <p className="text-sm text-gray-600 mb-3">
+                Beleghata Main Road, Kolkata
+              </p>
               <div className="flex justify-between items-center">
                 <div className="flex items-center space-x-4 text-sm text-gray-500">
                   <span className="flex items-center">
-                    <Star className="w-4 h-4 text-yellow-400 mr-1" />4.5
+                    <Star className="w-4 h-4 text-yellow-400 mr-1" />
+                    4.5
                   </span>
                   <span>23 reviews</span>
                 </div>
@@ -118,17 +132,24 @@ const HostDashboard: React.FC<HostDashboardProps> = ({
             {/* Station 2 */}
             <div className="border border-gray-200 rounded-lg p-4">
               <div className="flex justify-between items-start mb-3">
-                <h3 className="font-semibold text-gray-900">Garage Supercharger</h3>
+                <h3 className="font-semibold text-gray-900">
+                  Garage Supercharger
+                </h3>
                 <span className="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">
                   In Use
                 </span>
               </div>
-              <p className="text-sm text-gray-600 mb-2">150kW Tesla • 15/hour</p>
-              <p className="text-sm text-gray-600 mb-3">Beleghata Main Road, Kolkata</p>
+              <p className="text-sm text-gray-600 mb-2">
+                150kW Tesla • 15/hour
+              </p>
+              <p className="text-sm text-gray-600 mb-3">
+                Beleghata Main Road, Kolkata
+              </p>
               <div className="flex justify-between items-center">
                 <div className="flex items-center space-x-4 text-sm text-gray-500">
                   <span className="flex items-center">
-                    <Star className="w-4 h-4 text-yellow-400 mr-1" />4.8
+                    <Star className="w-4 h-4 text-yellow-400 mr-1" />
+                    4.8
                   </span>
                   <span>41 reviews</span>
                 </div>
@@ -142,7 +163,9 @@ const HostDashboard: React.FC<HostDashboardProps> = ({
 
         {/* Recent Bookings */}
         <div className="mt-8 bg-white rounded-xl shadow-sm p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">Recent Bookings</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-6">
+            Recent Bookings
+          </h2>
           <div className="space-y-4">
             {/* Booking 1 */}
             <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
@@ -151,7 +174,9 @@ const HostDashboard: React.FC<HostDashboardProps> = ({
                   <Battery className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <p className="font-medium text-gray-900">Tesla Model 3 - Sarah Wilson</p>
+                  <p className="font-medium text-gray-900">
+                    Tesla Model 3 - Sarah Wilson
+                  </p>
                   <p className="text-sm text-gray-600">2 hours • $16.00</p>
                 </div>
               </div>
@@ -170,7 +195,9 @@ const HostDashboard: React.FC<HostDashboardProps> = ({
                   <Clock className="w-5 h-5 text-orange-600" />
                 </div>
                 <div>
-                  <p className="font-medium text-gray-900">Nissan Leaf - Mike Chen</p>
+                  <p className="font-medium text-gray-900">
+                    Nissan Leaf - Mike Chen
+                  </p>
                   <p className="text-sm text-gray-600">1.5 hours • $12.00</p>
                 </div>
               </div>
